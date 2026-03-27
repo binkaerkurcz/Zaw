@@ -1,0 +1,19 @@
+name: nature
+
+on:
+  push:
+
+jobs:
+  fantasy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        deck: ["author", "operator", "device", "night", "tempt"]
+        loyal: ["feasible", "knee", "gold", "multiply"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar GT.jar
